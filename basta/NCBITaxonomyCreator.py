@@ -47,9 +47,9 @@ class Creator():
         oh.close()
 
 
-    # Ranks of interest (e.g. 7 taxon levels)
+    # Ranks of interest (all 29 possible taxon levels in the NCBI)
     def _ranks(self):
-        ranks=['superkingdom','phylum','class','order','family','genus','species']
+        ranks=['superkingdom','kingdom','subkingdom','superphylum','phylum','subphylum','superclass','class','subclass','infraclass','cohort','superorder','order','suborder','infraorder','parvorder','superfamily','family','subfamily','tribe','subtribe','genus','subgenus','species group','species','subspecies','species subgroup','varietas','forma']
         return ranks
 
 
