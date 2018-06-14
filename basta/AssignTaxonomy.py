@@ -166,12 +166,14 @@ class Assigner():
 
     def _get_tax_list(self,hits,map_lookup,tax_lookup,taxa,nofo_map):
         for hit in hits:
-            taxon_id = map_lookup.get(hit['id'])
-            if not taxon_id:
-                if not hit['id'] in nofo_map:
-                    self.logger.warning("\n# [BASTA WARNING] No mapping found for %s" % (hit['id']))
-                    nofo_map.append(hit['id'])
-                continue
+            #This should be an option: TaxID or accession
+            taxon_id = hit['id']
+            #taxon_id = map_lookup.get(hit['id'])
+            #if not taxon_id:
+            #    if not hit['id'] in nofo_map:
+            #        self.logger.warning("\n# [BASTA WARNING] No mapping found for %s" % (hit['id']))
+            #        nofo_map.append(hit['id'])
+            #    continue
             tax_string = tax_lookup.get(taxon_id)
             if not tax_string:
                 if not taxon_id in nofo_map:
